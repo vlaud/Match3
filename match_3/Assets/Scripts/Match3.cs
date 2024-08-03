@@ -15,8 +15,8 @@ public class Match3 : MonoBehaviour
     public GameObject nodePiece;
     public GameObject killedPiece;
 
-    int width = 9;
-    int height = 14;
+    [SerializeField] int width = 9;
+    [SerializeField] int height = 14;
     int[] fills;
     Node[,] board;
 
@@ -160,6 +160,11 @@ public class Match3 : MonoBehaviour
             }
         }
         return flip;
+    }
+
+    public void ResetBoardArray()
+    {
+        boardLayout = new ArrayLayout(width, height);
     }
 
     void StartGame()

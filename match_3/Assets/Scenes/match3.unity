@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -307,6 +306,8 @@ MonoBehaviour:
   killedBoard: {fileID: 666942877}
   nodePiece: {fileID: 1368908655534459162, guid: 27b1ba895c81bcb49888a8c9edff562d, type: 3}
   killedPiece: {fileID: 8736873375509344949, guid: 531434f2a7df5784f9891de7e721a3c7, type: 3}
+  width: 9
+  height: 14
 --- !u!114 &722480643
 MonoBehaviour:
   m_ObjectHideFlags: 0

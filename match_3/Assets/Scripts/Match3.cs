@@ -35,6 +35,7 @@ public class Match3 : MonoBehaviour
     void Update()
     {
         List<NodePiece> finishedUpdating = new List<NodePiece>();
+        Debug.Log(update.Count);
         for(int i = 0; i < update.Count; i++)
         {
             NodePiece piece = update[i];

@@ -6,12 +6,12 @@ public class Match3 : MonoBehaviour
 {
     public ArrayLayout boardLayout;
 
-    [Header("UI ¿ä¼Ò")]
+    [Header("UI ì„¤ì •")]
     public Sprite[] pieces;
     public RectTransform gameBoard;
     public RectTransform killedBoard;
 
-    [Header("ÇÁ¸®ÆÕ")]
+    [Header("í¼ì¦ ì„¤ì •")]
     public GameObject nodePiece;
     public GameObject killedPiece;
 
@@ -35,7 +35,7 @@ public class Match3 : MonoBehaviour
     void Update()
     {
         List<NodePiece> finishedUpdating = new List<NodePiece>();
-        Debug.Log(update.Count);
+        
         for(int i = 0; i < update.Count; i++)
         {
             NodePiece piece = update[i];
@@ -316,17 +316,17 @@ public class Match3 : MonoBehaviour
                 }
             }
 
-            if (same > 1) // °°Àº µµÇüÀÌ 1°³ º¸´Ù ¸¹À¸¸é ¸ÅÄ¡
-                AddPoints(ref connected, line); // ÀÌ Æ÷ÀÎÆ®¸¦ connected ¸®½ºÆ®¿¡ Ãß°¡
+            if (same > 1) // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 1ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡
+                AddPoints(ref connected, line); // ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ connected ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ß°ï¿½
         }
 
-        for(int i = 0; i < 2; i++) // °¡¿îµ¥ µµÇü¿¡¼­ ¿ŞÂÊ ¿À¸¥ÂÊ Ã¼Å©
+        for(int i = 0; i < 2; i++) // ï¿½ï¿½ï¿½îµ¥ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã¼Å©
         {
             List<Point> line = new List<Point>();
 
             int same = 0;
             Point[] check = { Point.add(p, directions[i]), Point.add(p, directions[i + 2]) };
-            foreach(Point next in check) // ¾çÂÊÀÌ °°Àº µµÇüÀÎÁö Ã¼Å©
+            foreach(Point next in check) // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã¼Å©
             {
                 if (getValueAtPoint(next) == val)
                 {
@@ -335,8 +335,8 @@ public class Match3 : MonoBehaviour
                 }
             }
 
-            if (same > 1) // °°Àº µµÇüÀÌ 1°³ º¸´Ù ¸¹À¸¸é ¸ÅÄ¡
-                AddPoints(ref connected, line); // ÀÌ Æ÷ÀÎÆ®¸¦ connected ¸®½ºÆ®¿¡ Ãß°¡
+            if (same > 1) // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 1ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡
+                AddPoints(ref connected, line); // ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ connected ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ß°ï¿½
         }
 
         for(int i = 0; i < 4; i++) // 2x2 Ã¼Å©
@@ -354,7 +354,7 @@ public class Match3 : MonoBehaviour
                 Point.add(p, directions[next]),
                 Point.add(p, Point.add(directions[i], directions[next]))
             };
-            foreach (Point pnt in check) // 4°³°¡ °°Àº µµÇüÀÎÁö Ã¼Å©
+            foreach (Point pnt in check) // 4ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã¼Å©
             {
                 if (getValueAtPoint(pnt) == val)
                 {
@@ -362,17 +362,17 @@ public class Match3 : MonoBehaviour
                     same++;
                 }
             }
-            if (same > 2) // °°Àº µµÇüÀÌ 2°³ º¸´Ù ¸¹À¸¸é ¸ÅÄ¡
-                AddPoints(ref connected, square); // ÀÌ Æ÷ÀÎÆ®¸¦ connected ¸®½ºÆ®¿¡ Ãß°¡
+            if (same > 2) // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 2ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡
+                AddPoints(ref connected, square); // ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ connected ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ß°ï¿½
         }
 
-        if(main) // ÇöÀç ¸ÅÄ¡¿Í ÀÌ¾îÁø ´Ù¸¥ ¸ÅÄ¡ Ã¼Å©
+        if(main) // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½Ì¾ï¿½ï¿½ï¿½ ï¿½Ù¸ï¿½ ï¿½ï¿½Ä¡ Ã¼Å©
         {
             for(int i = 0; i < connected.Count; i++)
                 AddPoints(ref connected, isConnected(connected[i], false));
         }
 
-        /* ÇÊ¿ä¾øÀ½
+        /* ï¿½Ê¿ï¿½ï¿½ï¿½ï¿½
         if (connected.Count > 0)
             connected.Add(p);
         */
